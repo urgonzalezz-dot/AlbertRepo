@@ -1,0 +1,92 @@
+{
+  "name": "help",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/help/src",
+  "projectType": "application",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/webpack:webpack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "compiler": "babel",
+        "outputPath": "dist/apps/help",
+        "index": "apps/help/src/index.html",
+        "baseHref": "/",
+        "main": "apps/help/src/main.js",
+        "tsConfig": "apps/help/tsconfig.app.json",
+        "assets": ["apps/help/src/favicon.ico", "apps/help/src/assets"],
+        "styles": ["apps/help/src/styles.scss"],
+        "scripts": [],
+        "webpackConfig": "apps/help/webpack.config.js"
+      },
+      "configurations": {
+        "development": {
+          "extractLicenses": false,
+          "optimization": false,
+          "sourceMap": true,
+          "vendorChunk": true
+        },
+        "production": {
+          "fileReplacements": [
+            {
+              "replace": "apps/help/src/environments/environment.js",
+              "with": "apps/help/src/environments/environment.prod.js"
+            }
+          ],
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "namedChunks": false,
+          "extractLicenses": true,
+          "vendorChunk": false,
+          "webpackConfig": "apps/help/webpack.config.prod.js"
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nx/react:module-federation-dev-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "help:build",
+        "hmr": true,
+        "port": 4204
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "help:build:development"
+        },
+        "production": {
+          "buildTarget": "help:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    },
+    "serve-static": {
+      "executor": "@nx/react:module-federation-static-server",
+      "defaultConfiguration": "production",
+      "options": {
+        "serveTarget": "help:serve"
+      },
+      "configurations": {
+        "development": {
+          "serveTarget": "help:serve:development"
+        },
+        "production": {
+          "serveTarget": "help:serve:production"
+        }
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "apps/help/jest.config.js"
+      }
+    }
+  }
+}
