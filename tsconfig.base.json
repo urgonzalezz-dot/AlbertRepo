@@ -1,0 +1,29 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "lib": ["es2020", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "configuration/Module": ["configuration/src/remote-entry.js"],
+      "dashboard/Module": ["dashboard/src/remote-entry.js"],
+      "help/Module": ["help/src/remote-entry.js"],
+      "offers/Module": ["offers/src/remote-entry.js"],
+      "order/Module": ["order/src/remote-entry.js"],
+      "store/Module": ["store/src/remote-entry.js"],
+      "usermanagment/Module": ["usermanagment/src/remote-entry.js"],
+      "catalog/Module": ["catalog/src/remote-entry.js"]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}
