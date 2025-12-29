@@ -22,7 +22,12 @@
       "order/Module": ["order/src/remote-entry.js"],
       "store/Module": ["store/src/remote-entry.js"],
       "usermanagment/Module": ["usermanagment/src/remote-entry.js"],
-      "catalog/Module": ["catalog/src/remote-entry.js"]
+      "catalog/Module": ["catalog/src/remote-entry.js"],
+      "@libs/hooks": ["libs/hooks/src/index.js"],
+      "@libs/auth0": ["libs/auth0/src/index.js"],
+      "@libs/http": ["libs/http/src/index.js"],
+      "@libs/redux": ["libs/redux/src/index.js"],
+      "@libs/ui": ["libs/ui/src/index.js"]
     }
   },
   "exclude": ["node_modules", "tmp"]

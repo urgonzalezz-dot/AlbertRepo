@@ -16,7 +16,7 @@
     "@nx/module-federation": "22.3.3",
     "@nx/react": "^22.3.3",
     "@nx/web": "22.3.3",
-    "@nx/webpack": "22.3.3",
+    "@nx/webpack": "^22.3.3",
     "@nx/workspace": "22.3.3",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.7",
     "@svgr/webpack": "^8.0.1",
@@ -49,7 +49,9 @@
     "typescript-eslint": "^8.40.0"
   },
   "dependencies": {
+    "@lp_front_account/lp-kit-dashboards": "^0.2.71",
     "@module-federation/enhanced": "^0.21.2",
+    "@mui/icons-material": "^6.5.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-router-dom": "6.29.0"
